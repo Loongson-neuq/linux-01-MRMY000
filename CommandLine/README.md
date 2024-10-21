@@ -13,7 +13,10 @@
 你能获取到的信息：
 
 ```
-
+Username: caiyi
+Platform name: archlinux
+Command: git (git may has been installed.)
+Options: get version
 ```
 
 ### 2
@@ -27,7 +30,10 @@ caiyi@LAPTOP-I80ETG8J ~> git --version
 你能获取到的信息：
 
 ```
-
+Shell: fish
+Help command: help (in some command it may be -h or something.)
+Username, command, option.
+Machine name: LAPTOP-I80ETG8
 ```
 
 ### 3
@@ -37,7 +43,11 @@ caiyi@LAPTOP-I80ETG8J ~> git --version
 你能获取到的信息：
 
 ```
-
+Shell: fish
+Username: yttehs
+Machine: ROG G16 
+Time: 08:07:12 PM
+In sudo mod.
 ```
 
 ### 4
@@ -47,7 +57,7 @@ caiyi@LAPTOP-I80ETG8J ~> git --version
 你能获取到的信息：
 
 ```
-
+这是一个图形化的fish界面。
 ```
 
 ### 5
@@ -64,7 +74,8 @@ PS C:\Users\Caiyi Hsu>
 你能获取到的信息：
 
 ```
-
+Shell: Windows PowerShell
+Powershell可能需要升级，他给了个链接。
 ```
 
 ### 6
@@ -77,7 +88,7 @@ $ git --version
 你能获取到的信息：
 
 ```
-
+命令行是在MINGW里面打开的，可能是要编译文件。
 ```
 
 ## 编写命令
@@ -130,13 +141,13 @@ $ git --version
 
 ## 填空题
 
-1. 给出一个常用的打印文件内容的命令：____
+1. 给出一个常用的打印文件内容的命令：<u>cat</u>
 
-2. 给出一个常用的创建空文件夹的命令：____
+2. 给出一个常用的创建空文件夹的命令：<u>mkdir</u>
 
-3. 如果我下载了一个 a.out 没有执行权限，你应该输入什么命令：____
+3. 如果我下载了一个 a.out 没有执行权限，你应该输入什么命令：<u>sudo</u>
 
-4. 在 Shell 中输出 "Hello, world" 的命令：____
+4. 在 Shell 中输出 "Hello, world" 的命令：<u>echo "Hello world"</u>
 
 ## 简答题
 
@@ -155,8 +166,15 @@ $ git --version
 提示：利用环境变量
 
 ```
-在这里简述你的操作
+Bash 的环境变量存储在home下的.bashrc文件中。
+使用vim或nano在该文件末尾加一行：export PATH="$HOME/riscv-gcc/bin:$PATH"
+运行source ~/.bashrc让更改生效。
+最后，用 
+wich g++-riscv64
+wich gcc-riscv64
+验证是否操作成功。
 ```
+
 
 ## 可选附加作业(自学)
 
@@ -164,10 +182,22 @@ $ git --version
 
 使用 1 行shell命令，在当前文件夹的 a.txt 中写入 "Hello, "
 
+```bash
+echo -n "Hello" >> a.txt
+```
+
 ### 2
 
 使用 1 行shell命令，在上一题的的 a.txt 中追加 "world!"
 
+```bash
+echo -n "world!" >> a.txt
+```
 ### 3
 
 同过软链接的方式解决[简答题](#简答题)的内容
+```bash
+直接在已经加到环境变量的路径里头创建这两个工具的软连接
+sudo ln -s ~/riscv-gcc/bin/gcc-riscv64 /gcc
+sudo ln -s ~/riscv-gcc/bin/g++-riscv64 /g++
+```
